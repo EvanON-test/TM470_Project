@@ -1,4 +1,4 @@
-package com.evan.tm470talkingcash;
+package com.example.tm470talkingcash;
 
 import org.junit.Test;
 

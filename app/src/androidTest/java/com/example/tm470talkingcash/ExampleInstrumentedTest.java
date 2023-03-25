@@ -1,4 +1,4 @@
-package com.evan.tm470talkingcash;
+package com.example.tm470talkingcash;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.evan.tm470talkingcash", appContext.getPackageName());
+        assertEquals("com.example.tm470talkingcash", appContext.getPackageName());
     }
 }

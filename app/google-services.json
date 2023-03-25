@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "707229987188",
+    "project_id": "tm470-talking-cash",
+    "storage_bucket": "tm470-talking-cash.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707229987188:android:77ef1ab056633d5ac63c21",
+        "android_client_info": {
+          "package_name": "com.example.tm470talkingcash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707229987188-kg8ipqeretgbqnd1d6m76lrkbd6rj8vl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9LA7KYEomXaB5bMjibynd30SfHpIxM_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707229987188-kg8ipqeretgbqnd1d6m76lrkbd6rj8vl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,8 +1,8 @@
 package com.example.tm470talkingcash;
 
-
+import android.text.TextUtils;
 import android.util.Patterns;
-
+import android.widget.Toast;
 
 
 /** I thought it would likely comply with OOP by making use of an extra class in which to focus on the

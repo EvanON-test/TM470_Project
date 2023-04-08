@@ -1,6 +1,6 @@
 package com.example.tm470talkingcash;
 
-
+import java.util.UUID;
 
 /**
  * Represents a user with a id, username and email

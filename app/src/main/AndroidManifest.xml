@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TM470TalkingCash"
         tools:targetApi="31">
+        <!--This sets the .LoginActivity to open on launching the App-->
         <activity
             android:name=".LoginActivity"
             android:exported="true">

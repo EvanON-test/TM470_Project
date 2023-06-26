@@ -22,6 +22,7 @@ import java.util.Objects;
 //TODO:In later iterations review other login methods e.g. google accounts/twitter accounts
 //TODO: Also investigate the implementation of an email verification functionality
 //TODO: review the registration process, as in is it worth logging the user in automatically after registration
+//TODO: add a legal disclaimer to the registration process
 
 /**
  * provides the functionality to register a new account using a username, email and password.

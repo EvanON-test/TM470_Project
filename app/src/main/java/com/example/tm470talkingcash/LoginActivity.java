@@ -90,6 +90,7 @@ public class LoginActivity extends AppCompatActivity {
         /**Attempts to sign in to a user account based on their inputted email and password. If successful
          * the main activity launches with a affirmative message. If unsuccessful an informative
          * error message will be displayed.
+         * TODO: review intents putExtra and if it's fully utilised/required
          *
           */
         fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -98,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
                     Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_LONG).show();
                     FirebaseUser user = fAuth.getCurrentUser();
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, MainThreadActivity.class);//TODO: just a note that you've set this to the main thread after login works
                     intent.putExtra("userEmail", user.getEmail());
                     intent.putExtra("userUid", user.getUid());
                     if (user.getDisplayName()!=null){

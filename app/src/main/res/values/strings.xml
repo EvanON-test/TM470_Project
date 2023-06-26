@@ -2,6 +2,8 @@
     <string name="app_name">TM470 Talking Cash</string>
     <string name="log_welcome_text">Welcome, Please enter login details.</string>
     <string name="reg_welcome_text">Welcome, Please enter registration details.</string>
+    <string name="reg_activity">Registration Activity</string>
+    <string name="log_activity">Login Activity</string>
     <string name="email_hint">Email</string>
     <string name="pass_hint">Password</string>
     <string name="confirm_pass_hint">Confirm Password</string>
@@ -9,4 +11,17 @@
     <string name="login">Login</string>
     <string name="username">Username</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="title_activity_post_creation">Talking Cash (Post Creation)</string>
+    <string name="title_activity_post_details">Talking Cash (Post Details)</string>
+    <string name="pc_welcome">Create a post by entering the details below</string>
+    <string name="pc_title">Please enter post Title</string>
+    <string name="pc_tag">Please enter Tags separated by commas</string>
+    <string name="pc_link">Please enter the full URL here</string>
+    <string name="create_post">Create Post</string>
+    <string name="title_activity_main_thread">Talking Cash (Main Thread)</string>
+    <string name="logout">Logout</string>
+    <string name="post_details_title">Title</string>
+    <string name="post_details_content">URL</string>
+    <string name="post_details_username">Username</string>
+    <string name="post_details_tags">Tags</string>
 </resources>

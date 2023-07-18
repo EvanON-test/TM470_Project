@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--TODO:Need to reveiw and change the 'labels' to something more appropriate/less simple -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +12,13 @@
         android:theme="@style/Theme.TM470TalkingCash"
         tools:targetApi="31">
         <activity
+            android:name=".ProfileEditActivity"
+            android:exported="false"
+            android:label="@string/title_activity_profile_edit" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:label="@string/log_activity">
@@ -22,33 +28,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".RegistrationActivity"
             android:exported="false"
-            android:label="@string/reg_activity"/>
-
+            android:label="@string/reg_activity" />
         <activity
             android:name=".MainThreadActivity"
             android:exported="false"
-            android:label="@string/title_activity_main_thread"/>
-
+            android:label="@string/title_activity_main_thread" />
         <activity
             android:name=".PostCreationActivity"
             android:exported="false"
-            android:label="@string/title_activity_post_creation"/>
-
+            android:label="@string/title_activity_post_creation" />
         <activity
             android:name=".PostDetailsActivity"
             android:exported="false"
-            android:label="@string/title_activity_post_details"/>
-
-
-        <!--Remove this after review of entire Mainactivity class/files!-->
+            android:label="@string/title_activity_post_details" /> <!-- Remove this after review of entire Mainactivity class/files! -->
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
     </application>
 
 </manifest>

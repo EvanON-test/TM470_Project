@@ -5,10 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/root_constraint_layout"
-    android:padding="15dp"
-    app:layout_constraintHeight_min="600dp"
-    app:layout_constraintWidth_min="300dp"
     tools:context=".LoginActivity">
+
+    <include
+        layout="@layout/custom_toolbar_bare"
+        android:id="@+id/custom_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <!--TODO: review yor options in modifying the UI, needs beautifying . Create style.xml-->
     <!--TODO: add background and logo in next iteration-->
@@ -20,6 +27,7 @@
         android:textSize="30sp"
         android:textStyle="bold"
         android:layout_marginTop="100dp"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintVertical_bias="0.2"
@@ -32,6 +40,7 @@
         android:layout_height="wrap_content"
         android:text="@string/log_welcome_text"
         android:layout_marginTop="30dp"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintVertical_bias="0.2"
@@ -43,6 +52,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcome"
@@ -61,6 +71,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/log_email_layout"
@@ -79,6 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:padding="15dp"
         android:text="@string/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -90,7 +102,7 @@
         android:id="@+id/reg_on_click"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:padding="15dp"
         android:clickable="true"
         android:focusable="true"
         android:text="@string/register"

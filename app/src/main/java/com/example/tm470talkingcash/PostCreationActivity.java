@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -57,40 +58,48 @@ public class PostCreationActivity extends AppCompatActivity {
      * Creates a post based on the user inputs into title, tag and hyperlink inputs. Some simple validation
      * is implemented. Once validated a post is created based on the user inputs and user details
      */
-    private void createPost(){
-            String title = titleText.getText().toString();
-            String tagsString = tagText.getText().toString();
-            String hyperlink = hyperlinkText.getText().toString();
+    private void createPost() {
+        String title = titleText.getText().toString();
+        String tagsString = tagText.getText().toString();
+        String hyperlink = hyperlinkText.getText().toString();
+        String userId = mAuth.getCurrentUser().getUid();
 
-            //TODO: review and increase validation here or in a validation class
+        //TODO: review and increase validation here or in a validation class
         /**
          * validates that inputs aren't empty and that url is valid
          */
-            if (title.isEmpty() || tagsString.isEmpty() || hyperlink.isEmpty()){
-                Toast.makeText(PostCreationActivity.this, "All fields are required. Please review content ", Toast.LENGTH_SHORT).show();
-                return;
-            }
+        if (title.isEmpty() || tagsString.isEmpty() || hyperlink.isEmpty()) {
+            Toast.makeText(PostCreationActivity.this, "All fields are required. Please review content ", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-            if(!isValidUrl(hyperlink)){
-                Toast.makeText(PostCreationActivity.this, "Invalid URL", Toast.LENGTH_SHORT).show();
-                return;
-            }
+        if (!isValidUrl(hyperlink)) {
+            Toast.makeText(PostCreationActivity.this, "Invalid URL", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-            //TODO: Need to implement validation for this
-            //Split and trim the list of tags
-            List<String> tags = new ArrayList<>();
-            for (String tag : tagsString.split(",")){
-                tags.add(tag.trim());
-            }
+        //TODO: Need to implement validation for this
+        //Split and trim the list of tags
+        List<String> tags = new ArrayList<>();
+        for (String tag : tagsString.split(",")) {
+            tags.add(tag.trim());
+        }
 
-        /**
-         * Creates a new post after assessing current user and getting their details as well as their inputs.
-         * Adds post to the Posts database. If successful creates a toast in the affirmative and starts MainThreadActivity else
-         * creates toast in the negative.
-         */
-        //TODO: Review if it's a better scenario to implement this in a separate class
-            if(mAuth.getCurrentUser() != null){
-                Post post = new Post(UUID.randomUUID().toString(), mAuth.getCurrentUser().getUid(), title, tags, hyperlink, new Date().getTime());
+
+        db.collection("users").document(userId).get().addOnSuccessListener(documentSnapshot -> {
+            String username = documentSnapshot.getString("username");
+
+
+
+            /**
+             * Creates a new post after assessing current user and getting their details as well as their inputs.
+             * Adds post to the Posts database. If successful creates a toast in the affirmative and starts MainThreadActivity else
+             * creates toast in the negative.
+             */
+            //TODO: username is NUll in the section below ?? :(
+            if (mAuth.getCurrentUser() != null) {
+                Post post = new Post(UUID.randomUUID().toString(), mAuth.getCurrentUser().getUid(), username, title, tags, hyperlink, new Date().getTime());
+                Log.d("PostCreationActivity", "Post: " + post.toString());
                 db.collection("posts").document(post.getPostId()).set(post)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -109,7 +118,10 @@ public class PostCreationActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(PostCreationActivity.this, "You are not recognised as logged in", Toast.LENGTH_SHORT).show();
             }
-        }
+        }).addOnFailureListener(e ->{
+            Toast.makeText(this, "Failed to fetch users document", Toast.LENGTH_SHORT).show();
+        });
+    }
 }
 
 

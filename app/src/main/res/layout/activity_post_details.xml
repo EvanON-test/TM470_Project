@@ -6,8 +6,9 @@
     android:layout_height="wrap_content"
     tools:context=".PostDetailsActivity">
 
-    <!--TODO: This isn't anywhere near done yet, just fleshing out a template need to review against what you
-    actual post requires-->
+    <!--TODO: This needs modification to make it appear better, must be easy to read what the post is about and see where one post ends and the next begins -->
+
+
 
     <TextView
         android:id="@+id/post_deats_username"

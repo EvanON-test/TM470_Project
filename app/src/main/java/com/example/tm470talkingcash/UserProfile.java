@@ -10,6 +10,13 @@ public class UserProfile {
     private String username;
     private String userEmail;
 
+    public UserProfile(){}
+
+    public UserProfile( String username, String userEmail){
+        this.username = username;
+        this.userEmail = userEmail;
+    }
+
     //Constructs a userProfile object
     public UserProfile(String userId, String username, String userEmail){
         this.userId = userId;

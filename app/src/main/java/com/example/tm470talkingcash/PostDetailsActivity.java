@@ -22,6 +22,7 @@ public class PostDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_details);
 
+        TextView postUsernameTextView = findViewById(R.id.post_deats_username);
         TextView postTitleTextView = findViewById(R.id.post_deats_title);
         TextView postTagsTextView = findViewById(R.id.post_deats_tags);
         Button postHyperlinkButton = findViewById(R.id.post_deats_hyperlink);
@@ -33,6 +34,9 @@ public class PostDetailsActivity extends AppCompatActivity {
             //converts the firestore document ot a post object
             Post post = documentSnapshot.toObject(Post.class);
 
+
+            //Sets the text of the postUsernameTextView to the username of the poster.
+            postUsernameTextView.setText(post.getUsername());
             //Sets the text of the postTitleTextView to the title of the post.
             postTitleTextView.setText(post.getTitle());
             //Joins the list of tags from the post inot a string seprated buy a comma ','
@@ -40,11 +44,12 @@ public class PostDetailsActivity extends AppCompatActivity {
             postTagsTextView.setText(tags);
             //Sets teh text of the posthyperlinkbutton to the hyperlink of the post
             postHyperlinkButton.setText(post.getHyperlink());
+            Log.d("PostDetailsActivity", "User DocumentSnapshot: " + documentSnapshot.toString());
 
             //Sets an onclick listener on the posthyperlink button that opens the hyperlink in the devices browser when the button is clicked
             postHyperlinkButton.setOnClickListener(view -> {
                 String url = post.getHyperlink();
-                //TODO: Review if this validation is needed as it's already been validatd in creation
+                //TODO: Review if this validation is needed as it's already been validatd in creation. Maybe make sure is implemented fully elsewhere and just have a simple check here
                 if (url != null && (url.startsWith("http://")) || (url.startsWith("https://"))){
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(post.getHyperlink()));
                     startActivity(browserIntent);

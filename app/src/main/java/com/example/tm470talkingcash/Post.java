@@ -3,7 +3,7 @@ package com.example.tm470talkingcash;
 import java.util.List;
 
 //TODO: certain setters are not used and could be removed however I intend to review the
-// possibility of editing posts and as such do not want to remove them just yet
+// possibility of editing posts and as such do not want to remove them just yet. Remove at a later date
 /**
  * Represents a Post with postid, userid, username, identifying tags, a hyperlink and timestamp.
  * Includes constructors, getters and setters.

@@ -5,16 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.firebase.FirebaseApp;
 
 
 public class MainActivity extends AppCompatActivity {
 
-
+//TODO: I think this can be deleted but probabaly better to do at a later date after reviewing any footprint it has
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //sets the view to the login activity layout
+        //sets the view to the main activity layout
         setContentView(R.layout.activity_main);
 
         //Gets user information from login

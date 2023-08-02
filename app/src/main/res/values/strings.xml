@@ -1,6 +1,6 @@
 <resources>
     <!--TODO: adjust some of teh ID's, and their respective links across the project, as some of the ID's are too specific for certain cases where it's used in numerous places-->
-    <string name="app_name">TM470 Talking Cash</string>
+    <string name="app_name">Talking Cash</string>
     <string name="log_welcome_text">Welcome, Please enter login details.</string>
     <string name="reg_welcome_text">Welcome, Please enter registration details.</string>
     <string name="reg_activity">Registration Activity</string>
@@ -13,6 +13,7 @@
     <string name="username">Username</string>
     <string name="profile">Profile</string>
     <string name="about">About</string>
+    <string name="submit">Submit</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="title_activity_post_creation">Talking Cash (Post Creation)</string>
     <string name="title_activity_post_details">Talking Cash (Post Details)</string>
@@ -37,4 +38,5 @@
     <string name="current_password">Current Password</string>
     <string name="new_password">New Password</string>
     <string name="save_profile">Save Changes</string>
+    <string name="about_extended">Creator: Evan Neale \n\n Application Name: TalkingCash/TM470 Final Project \n\n Degree Course: BSc (Honours) Computing and IT (Software) \n\n Degree Code: Q62 \n\n Project Title: Development and iteration of an exclusive java-based android application for the dissemination of equity linked insights </string>
 </resources>

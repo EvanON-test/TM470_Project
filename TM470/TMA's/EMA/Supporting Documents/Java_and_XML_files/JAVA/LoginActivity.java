@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        //TODO: review and maybe implement validation techniques in a smarter way. Move toasts to UserValidation?
+
         //Validates the inputs using methods imported from the UserValidation class
         if (!UserValidation.isValidEmail(email)){
             Toast.makeText(getApplicationContext(), "Please enter Valid Email", Toast.LENGTH_LONG).show();
@@ -87,9 +87,10 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        /**Attempts to sign in to a user account based on their inputted email and password. If successful
+        /**Attempts to sign in to a user account based on the email and password input. If successful
          * the main activity launches with a affirmative message. If unsuccessful an informative
          * error message will be displayed.
+         *
          *
           */
         fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -98,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
                     Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_LONG).show();
                     FirebaseUser user = fAuth.getCurrentUser();
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, MainThreadActivity.class);//TODO: just a note that you've set this to the main thread after login works
                     intent.putExtra("userEmail", user.getEmail());
                     intent.putExtra("userUid", user.getUid());
                     if (user.getDisplayName()!=null){

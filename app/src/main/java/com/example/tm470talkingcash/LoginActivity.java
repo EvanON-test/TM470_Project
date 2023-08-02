@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        //TODO: review and maybe implement validation techniques in a smarter way. Move toasts to UserValidation?
+
         //Validates the inputs using methods imported from the UserValidation class
         if (!UserValidation.isValidEmail(email)){
             Toast.makeText(getApplicationContext(), "Please enter Valid Email", Toast.LENGTH_LONG).show();
@@ -87,10 +87,10 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        /**Attempts to sign in to a user account based on their inputted email and password. If successful
+        /**Attempts to sign in to a user account based on the email and password input. If successful
          * the main activity launches with a affirmative message. If unsuccessful an informative
          * error message will be displayed.
-         * TODO: review intents putExtra and if it's fully utilised/required
+         *
          *
           */
         fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {

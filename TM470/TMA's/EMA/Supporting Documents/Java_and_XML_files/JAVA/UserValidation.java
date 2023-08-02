@@ -1,8 +1,8 @@
 package com.example.tm470talkingcash;
 
-import android.text.TextUtils;
+
 import android.util.Patterns;
-import android.widget.Toast;
+
 
 
 /** I thought it would likely comply with OOP by making use of an extra class in which to focus on the
@@ -11,8 +11,9 @@ import android.widget.Toast;
  */
 public class UserValidation {
 
-//TODO:Review these techniques again in the next iteration. Could you implement more specific
-// checks and toasts here?
+
+
+
     public static boolean isNullOrEmpty(String text){
         return text == null || text.trim().isEmpty();
     }

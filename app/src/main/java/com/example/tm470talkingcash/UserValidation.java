@@ -11,8 +11,9 @@ import android.util.Patterns;
  */
 public class UserValidation {
 
-//TODO:Review these techniques again in the next iteration. Could you implement more specific
-// checks and toasts here?
+
+
+
     public static boolean isNullOrEmpty(String text){
         return text == null || text.trim().isEmpty();
     }

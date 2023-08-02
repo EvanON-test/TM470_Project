@@ -18,11 +18,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.Objects;
 
-//TODO: Make sure the comments are all appropriate i.e. elaborate and make sure they conform to language syntax
-//TODO:In later iterations review other login methods e.g. google accounts/twitter accounts
-//TODO: Also investigate the implementation of an email verification functionality
-//TODO: review the registration process, as in is it worth logging the user in automatically after registration
-//TODO: add a legal disclaimer to the registration process
+
+
+
+
+
 
 /**
  * provides the functionality to register a new account using a username, email and password.
@@ -80,7 +80,7 @@ public class RegistrationActivity extends AppCompatActivity {
         confirmPassword = confirmPasswordText.getText().toString().trim();
         minLength = 6;
 
-        //TODO: review if more validation techniques are required, restructure into UserValidation class where possible
+
         //Validates the user inputs using methods imported from the UserValidation class
         if (!UserValidation.isValidUsername(username, minLength)){
             Toast.makeText(getApplicationContext(), "Please enter a Valid Username", Toast.LENGTH_LONG).show();

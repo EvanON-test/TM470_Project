@@ -1,6 +1,6 @@
 package com.example.tm470talkingcash;
 
-import java.util.UUID;
+
 
 /**
  * Represents a user with a id, username and email
@@ -9,6 +9,13 @@ public class UserProfile {
     private String userId;
     private String username;
     private String userEmail;
+
+    public UserProfile(){}
+
+    public UserProfile( String username, String userEmail){
+        this.username = username;
+        this.userEmail = userEmail;
+    }
 
     //Constructs a userProfile object
     public UserProfile(String userId, String username, String userEmail){

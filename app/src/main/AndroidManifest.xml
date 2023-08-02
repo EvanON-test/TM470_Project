@@ -12,6 +12,12 @@
         android:theme="@style/Theme.TM470TalkingCash"
         tools:targetApi="31">
         <activity
+            android:name=".MainPostDetails"
+            android:exported="false" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileEditActivity"
             android:exported="false"
             android:label="@string/title_activity_profile_edit" />
@@ -21,7 +27,7 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true"
-            android:label="@string/log_activity">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

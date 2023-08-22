@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/activity_legal_disclaimer.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_legal_disclaimer.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/fragment_home.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/item_comment.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/item_comment.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/activity_profile.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/activity_post_creation.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_post_creation.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/fragment_notifications.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/fragment_notifications.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/custom_toolbar_bare.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/custom_toolbar_bare.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/activity_gdpr.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_gdpr.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/activity_profile_edit.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_profile_edit.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/activity_about.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_about.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/activity_registration.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_registration.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/custom_toolbar.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/custom_toolbar.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/activity_post_details.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_post_details.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/activity_terms_of_use.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_terms_of_use.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/activity_main_thread.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_main_thread.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/activity_login.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/activity_main_post_details.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_main_post_details.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-mergeDebugResources-75:/layout/fragment_dashboard.xml",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/fragment_dashboard.xml"
+    }
+]

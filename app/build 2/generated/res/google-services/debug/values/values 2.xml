@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">707229987188-kg8ipqeretgbqnd1d6m76lrkbd6rj8vl.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">707229987188</string>
+    <string name="google_api_key" translatable="false">AIzaSyD9LA7KYEomXaB5bMjibynd30SfHpIxM_Q</string>
+    <string name="google_app_id" translatable="false">1:707229987188:android:77ef1ab056633d5ac63c21</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD9LA7KYEomXaB5bMjibynd30SfHpIxM_Q</string>
+    <string name="google_storage_bucket" translatable="false">tm470-talking-cash.appspot.com</string>
+    <string name="project_id" translatable="false">tm470-talking-cash</string>
+</resources>

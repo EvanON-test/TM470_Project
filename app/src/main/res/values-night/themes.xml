@@ -1,18 +1,45 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.TM470TalkingCash" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+<resources >
+    <!-- Base application theme for night mode. -->
+    <style name="Theme.TM470TalkingCash" parent="Theme.MaterialComponents.DayNight">
+
+        <!--TODO:Further development needed-->
+
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/gold_muted_600</item>
+        <item name="colorPrimaryVariant">@color/gold_muted_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="colorSecondary">@color/gray_500</item>
+        <item name="colorSecondaryVariant">@color/gray_600</item>
+        <item name="colorOnSecondary">@color/off_white_200</item>
+
+
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+
+        <!-- Overriding default styles -->
+        <item name="buttonStyle">@style/Widget.TM470TalkingCash.Button.Night</item>
+        <item name="textInputStyle">@style/Widget.TM470TalkingCash.TextInputLayout.Night</item>
+
     </style>
+
+    <!-- Button -->
+    <style name="Widget.TM470TalkingCash.Button.Night" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/gold_muted_600</item>
+        <item name="android:textColor">@color/off_white_200</item>
+    </style>
+
+
+    <!-- TextInputLayout -->
+    <style name="Widget.TM470TalkingCash.TextInputLayout.Night" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/gold_muted_600</item>
+        <item name="hintTextColor">@color/gray_300</item>
+        <item name="boxBackgroundColor">@color/gray_600</item>
+    </style>
+
+
+
+
 </resources>
+

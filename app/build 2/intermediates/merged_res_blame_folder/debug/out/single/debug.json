@@ -1,0 +1,206 @@
+[
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_fragment_notifications.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/fragment_notifications.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_activity_main_post_details.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_main_post_details.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_activity_profile_edit.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_profile_edit.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_activity_login.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_item_comment.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/item_comment.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/drawable-night_post_background.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/drawable-night/post_background.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_activity_legal_disclaimer.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_legal_disclaimer.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_activity_profile.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_fragment_home.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_activity_post_details.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_post_details.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_custom_toolbar.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/custom_toolbar.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/drawable_tm470_app_logo.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/drawable/tm470_app_logo.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_activity_main_thread.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_main_thread.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_fragment_dashboard.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/navigation_mobile_navigation.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/navigation/mobile_navigation.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/menu_menu_main.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/menu/menu_main.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/drawable_ic_dashboard_black_24dp.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/drawable/ic_dashboard_black_24dp.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/drawable_ic_notifications_black_24dp.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/drawable/ic_notifications_black_24dp.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/drawable-night_border.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/drawable-night/border.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/drawable_ic_home_black_24dp.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/drawable/ic_home_black_24dp.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/drawable_border.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/drawable/border.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/drawable_post_background.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/drawable/post_background.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout-v26_activity_login.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout-v26/activity_login.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_activity_terms_of_use.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_terms_of_use.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_activity_post_creation.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_post_creation.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_activity_registration.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_registration.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_activity_gdpr.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_gdpr.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_custom_toolbar_bare.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/custom_toolbar_bare.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/xml_backup_rules.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.tm470talkingcash.app-merged_res-76:/layout_activity_about.xml.flat",
+        "source": "com.example.tm470talkingcash.app-main-78:/layout/activity_about.xml"
+    }
+]

@@ -3,95 +3,103 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".PostDetailsActivity">
-
-    <!--TODO: This needs modification to make it appear better, must be easy to read what the post is about and see where one post ends and the next begins -->
-
 
     <include
         layout="@layout/custom_toolbar_bare"
         android:id="@+id/custom_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <TextView
-        android:id="@+id/post_deats_username"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/post_background"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:layout_margin="16dp"
+        android:layout_margin="10dp"
         app:layout_constraintTop_toBottomOf="@id/custom_toolbar"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/post_details_username"/>
-
-    <TextView
-        android:id="@+id/post_deats_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:layout_margin="16dp"
-        app:layout_constraintTop_toBottomOf="@id/post_deats_username"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/post_details_title"/>
+        android:background="@drawable/post_background">
 
-    <TextView
-        android:id="@+id/post_deats_tags"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_margin="16dp"
-        app:layout_constraintTop_toBottomOf="@id/post_deats_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/post_details_tags"/>
+        <TextView
+            android:id="@+id/post_deats_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_margin="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/post_details_username"
+            />
 
-    <Button
-        android:id="@+id/post_deats_hyperlink"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_margin="16dp"
-        app:layout_constraintTop_toBottomOf="@id/post_deats_tags"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/post_details_content"/>
+        <TextView
+            android:id="@+id/post_deats_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_margin="16dp"
+            app:layout_constraintTop_toBottomOf="@id/post_deats_username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/post_details_title"
+            />
+
+        <TextView
+            android:id="@+id/post_deats_tags"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_margin="16dp"
+            app:layout_constraintTop_toBottomOf="@id/post_deats_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/post_details_tags"
+            />
+
+        <Button
+            android:id="@+id/post_deats_hyperlink"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toBottomOf="@id/post_deats_tags"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/post_details_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/comment_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_margin="16dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:scrollbars="vertical"
-        app:layout_constraintTop_toBottomOf="@id/post_deats_hyperlink"
+        app:layout_constraintTop_toBottomOf="@id/post_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/new_comment_layout"/>
-
-
-
+        app:layout_constraintBottom_toTopOf="@+id/new_comment_layout"
+        android:padding="4dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_comment_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/comment_recycler_view"
-        app:layout_constraintBottom_toTopOf="@+id/button_submit_comment">
+        app:layout_constraintTop_toBottomOf="@id/comment_recycler_view">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_text_new_comment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/pc_tag"
+            android:hint="@string/comment"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -104,11 +112,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
-
-
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 

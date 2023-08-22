@@ -2,7 +2,7 @@
     <!--TODO: adjust some of teh ID's, and their respective links across the project, as some of the ID's are too specific for certain cases where it's used in numerous places-->
     <string name="app_name">Talking Cash</string>
     <string name="log_welcome_text">Welcome, Please enter login details.</string>
-    <string name="reg_welcome_text">Welcome, Please enter registration details.</string>
+    <string name="reg_welcome_text">Please enter registration details.</string>
     <string name="reg_activity">Registration Activity</string>
     <string name="log_activity">Login Activity</string>
     <string name="email_hint">Email</string>
@@ -38,5 +38,17 @@
     <string name="current_password">Current Password</string>
     <string name="new_password">New Password</string>
     <string name="save_profile">Save Changes</string>
+    <string name="comment">Please enter your comments here</string>
     <string name="about_extended">Creator: Evan Neale \n\n Application Name: TalkingCash/TM470 Final Project \n\n Degree Course: BSc (Honours) Computing and IT (Software) \n\n Degree Code: Q62 \n\n Project Title: Development and iteration of an exclusive java-based android application for the dissemination of equity linked insights </string>
+    <string name="extended_pass_hint">Your password must be at least 4 characters long, contain at least one uppercase letter, one number, one special character (@, #, $, %, ^, &amp;, +, =, !), and have no spaces.</string>
+    <string name="extended_username_hint">Please ensure your username is between 4 to 15 characters long, inclusive, and consists only of alphanumeric characters (letters a-z, A-Z, numbers 0-9), underscores (_), or special characters, with no spaces.</string>
+    <string name="extended_email_hint">Your Email Must be in the form of localpart@domain.com. Local part can be alphanumeric and contain dots, hyphens and underscores. Domain is the provider, for example, gmail and .com is the domain extension which can come in many other forms for example org, net, io</string>
+    <string name="legal_disclaimer">Legal Disclaimer</string>
+    <string name="terms_of_use">Terms of use</string>
+    <string name="gdpr_text">GDPR</string>
+    <string name="legal_disclaimer_body">Legal Disclaimer full text</string>
+    <string name="terms_of_use_body">Terms of use full text</string>
+    <string name="gdpr_text_body">GDPR full text</string>
+    <string name="logo_view_description">An image of the Application logo. CLick to return ot he main thread</string>
+
 </resources>

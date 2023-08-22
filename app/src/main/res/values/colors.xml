@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Golds -->
+    <color name="gold_muted_500">#B89A58</color>
+    <color name="gold_muted_600">#A2884F</color>
+    <color name="gold_muted_700">#8B7545</color>
+    <color name="gold_muted_800">#755C36</color>
+
+    <!-- Whites and Off-Whites -->
+    <color name="white">#FFFFFF</color>
+    <color name="off_white_100">#FDFDFD</color>
+    <color name="off_white_200">#FAFAFA</color>
+    <color name="off_white_300">#F5F5F5</color>
+
+    <!-- Blacks and Grays -->
+    <color name="black">#000000</color>
+    <color name="charcoal">#1C1C1C</color>
+    <color name="gray_100">#E0E0E0</color>
+    <color name="gray_200">#BDBDBD</color>
+    <color name="gray_300">#9E9E9E</color>
+    <color name="gray_400">#757575</color>
+    <color name="gray_500">#616161</color>
+    <color name="gray_600">#424242</color>
+    <color name="gray_700">#212121</color>
+
+    <!-- Neutrals -->
+    <color name="champagne_200">#F5D1A3</color>
+    <color name="taupe_200">#D5C6B3</color>
 </resources>
+

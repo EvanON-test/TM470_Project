@@ -30,6 +30,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -51,8 +53,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_edit);
 
-        ImageView logoView = findViewById(R.id.logo_view);
-        Button createPostButton = findViewById(R.id.create_post_main);
+
 
         db = FirebaseFirestore.getInstance();
         fAuth = FirebaseAuth.getInstance();
@@ -65,28 +66,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         saveBtn = findViewById(R.id.save_user_profile);
 
 
-        /**
-         * Sets click listens for the logo (home) button, create post button and save profile edit button respectively.
-         *
-         */
 
-        //Refreshed main thread to show whole list of posts
-        logoView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProfileEditActivity.this, MainThreadActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        //Navigates to create post activity
-        createPostButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProfileEditActivity.this, PostCreationActivity.class);
-                startActivity(intent);
-            }
-        });
 
 
         //Saves inputs when clicked
@@ -125,49 +105,7 @@ public class ProfileEditActivity extends AppCompatActivity {
     }
 
 
-    /**
-     * Creates the options menu in the toolbar which currently allows for the navigation to the profile and about pages as well as
-     *  the logout function
-     *
-     * @param menu
-     * @return
-     */
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_profile:
-                //navigates to the profile identified by the currewnt user's ID
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if (user != null) {
-                    Intent intent = new Intent(ProfileEditActivity.this, ProfileActivity.class);
-                    intent.putExtra("USER_ID", user.getUid());
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(this, "ERROR: You're not recognised as logged in", Toast.LENGTH_SHORT).show();
-                }
-                return true;
-            case R.id.action_about:
-                //Navigate to about page
-                Intent intentTwo = new Intent(ProfileEditActivity.this, AboutActivity.class);
-                startActivity(intentTwo);
-                return true;
-            case R.id.action_logout:
-                //Logs user out
-                FirebaseAuth.getInstance().signOut();
-                Intent intentThree = new Intent(ProfileEditActivity.this, LoginActivity.class);
-                startActivity(intentThree);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
         /**
          * This method updaets the users details based on their inputs
@@ -175,30 +113,25 @@ public class ProfileEditActivity extends AppCompatActivity {
 
 
         private void saveProfileEdit(){
-            String username;
-            String email;
-            String confirmNewPassword;
-            String newPassword;
-            Integer minLength;
 
             //initializes the variables based oin their inputs
-            username = usernameText.getText().toString().trim();
-            email = emailText.getText().toString().trim();
-            newPassword = newPasswordText.getText().toString().trim();
-            confirmNewPassword = confirmNewPasswordText.getText().toString().trim();
-            minLength = 6;
+            String username = usernameText.getText().toString().trim();
+            String email = emailText.getText().toString().trim();
+            String newPassword = newPasswordText.getText().toString().trim();
+            String confirmNewPassword = confirmNewPasswordText.getText().toString().trim();
+
 
 
 
             //Validates the user inputs using methods imported from the UserValidation class
-            if (!UserValidation.isValidUsername(username, minLength)){
-                Toast.makeText(getApplicationContext(), "Please enter a Valid Username (greater than 6 characters)", Toast.LENGTH_LONG).show();
+            if (UserValidation.isInvalidUsername(username)){
+                Toast.makeText(getApplicationContext(), "Please enter a Valid Username", Toast.LENGTH_LONG).show();
                 return;
             } else if (!UserValidation.isValidEmail(email)){
                 Toast.makeText(getApplicationContext(), "Please enter a Valid Email", Toast.LENGTH_LONG).show();
                 return;
-            } else if (!UserValidation.isValidPassword(newPassword, minLength)){
-                Toast.makeText(getApplicationContext(), "Please enter Valid Password (greater than 6 characters)", Toast.LENGTH_LONG).show();
+            } else if (!UserValidation.isValidPassword(newPassword)){
+                Toast.makeText(getApplicationContext(), "Please conform to password requirements", Toast.LENGTH_LONG).show();
                 return;
             } else if (!UserValidation.doPasswordsMatch(newPassword, confirmNewPassword)){
                 Toast.makeText(getApplicationContext(), "Please ensure you have confirmed passwords appropriately", Toast.LENGTH_LONG).show();
@@ -215,7 +148,10 @@ public class ProfileEditActivity extends AppCompatActivity {
             updates.put("userEmail", email);
 
 
-            //Updates the specific docuemnt based on the Hashmap. On success will also update the auth with hte new details
+
+
+            //TODO: need to add a username and email check here that checks all users, except from the current, so that there wont be any duplicate usernames and emails
+            //Updates the specific document based on the Hashmap. On success will also update the auth with hte new details
             docRef.update(updates).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
@@ -256,6 +192,35 @@ public class ProfileEditActivity extends AppCompatActivity {
 
 
         }
+
+
+        /**
+        //TODO: This is the username check so far....needs further work
+        private void usernameCheck(String username, String currentUserId){
+
+            db.collection("users").whereEqualTo("username", username).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    if (task.isSuccessful()){
+                        if (!task.getResult().isEmpty()){
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                if (!document.getString("userId").equals(currentUserId)) {
+                                    // The username is taken by another user
+                                    Toast.makeText(getApplicationContext(), "Username is taken", Toast.LENGTH_SHORT).show();
+                                    break;
+                                }
+                            }
+                            Toast.makeText(getApplicationContext(), "Username unchanged", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Username is available", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Log.w(TAG, "Error updating username", task.getException());
+                        Toast.makeText(getApplicationContext(), "Error updating username", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }**/
 
 
 }

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -44,22 +45,19 @@ import java.util.List;
 //TODO: MUST HAVE
 
 //TODO: make a class holding the toolbar/ oncreate options ect stuff - the code is repeated across too many activites
-//TODO post creation and post edit need gunctional toolbars
-//TODO: review all views, activites  and buttons to make sure they are all have obvious borders and user friendly
-//TODO: need to incese the validation on the profile names and email and thier edits
+//TODO post creation and post edit need Functional toolbars
+//TODO: need to increase the validation on the profile edit names and email
 //TODO: sort out green background of logo on start up
-//TODO: Need to implement some kind of unit, integration and accesibility testing, will need to do some reading on these
-//TODO: Remove the old Main activity
-//TODO: create a post edit/delete function (this will come after the user profile creation element is flesh out). Maybe add a list of the progiles posts in profile section or make userprofile searchable in the search element
-//TODO: add a legal disclaimer, terms of use and GDPR data element to the registration activity
-//TODO: review the xml against accesible principles. e.g. make usre it's useable for a screen reader. Will need to research this more
+//TODO: Need to further develop the unit, integration and accessibility testing, requires further reading
+//TODO: create a post edit/delete function
+//TODO: Flesh out the template for legal disclaimer, terms of use and GDPR
+
 
 //TODO: COULD HAVE
 
-//TODO: think about involving anoter language version, should be simple enough as it's just building of off stuff already in strings XML
 //TODO: add a reporting function to the user posts, to report any htat users deem break the terms of use
 //TODO: Review implementation of fragment at a later date (even possbily replaceing tooolbar??)
-//TODO: when posts are created the url sometimes is super lengthy - maybe change how its displayed ? to remove all the extra bits
+
 
 
 
@@ -85,22 +83,22 @@ public class MainThreadActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.custom_toolbar);
         setSupportActionBar(toolbar);
 
-        //Finds the views within the layout to attach onclick and query listenrs to them
+        //Finds the views within the layout to attach onclick and query listeenrs to them
         ImageView logoView = findViewById(R.id.logo_view);
         SearchView searchView = findViewById(R.id.toolbar_searchview);
         Button createPostButton = findViewById(R.id.create_post_main);
 
         /**
-         * Sets on click listens for the logo to naviagte to the Mainthreadactivity and the create post button . Sets a query
+         * Sets on click listens for the logo to navigate to the Mainthreadactivity and the create post button . Sets a query
          * listener to the searchview
          *
          */
 
-        //Refreshed main thread to show whole list of posts
+        //Refreshes main thread to show whole list of posts
         logoView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainThreadActivity.this, MainThreadActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainThreadActivity.class);
                 startActivity(intent);
             }
         });
@@ -109,12 +107,12 @@ public class MainThreadActivity extends AppCompatActivity {
         createPostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainThreadActivity.this, PostCreationActivity.class);
+                Intent intent = new Intent(getApplicationContext(), PostCreationActivity.class);
                 startActivity(intent);
             }
         });
 
-        //Both query listners takes users query as input for filtering the posts. The 'submit' option is currently empty however the 'text change' will return filter posts without physically actioning it
+        //Both query listeners takes users query as input for filtering the posts. The 'submit' option is currently empty however the 'text change' will return filter posts without physically actioning it
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -176,6 +174,8 @@ public class MainThreadActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainThreadActivity.this, PostDetailsActivity.class);
                     //passes teh post_id to the post detail activity
                     intent.putExtra("POST_ID", model.getPostId());
+                    Log.d("MainActivity", "Post ID:" + model.getPostId());
+
                     //starts teh post details activity
                     startActivity(intent);
                 });
@@ -210,8 +210,7 @@ public class MainThreadActivity extends AppCompatActivity {
      * Creates the options menu in the toolbar which currently allows for the navigation to the profile and about pages as well as
      *  the logout function
      *
-     * @param menu
-     * @return
+     *
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -252,8 +251,9 @@ public class MainThreadActivity extends AppCompatActivity {
 
 
     /**
-     *This method searches the list of posts on firestore for posts that have tag's that matche the query parameter
-     * @param query
+     *This method searches the list of posts on firestore for posts that have tag's that matches the query parameter
+     *
+     *
      */
     private void searchPosts(String query) {
         //Retrieves an instance of the database
@@ -323,7 +323,9 @@ class PostViewHolder extends RecyclerView.ViewHolder{
         usernameView.setText(post.getUsername());
         titleView.setText(post.getTitle());
         tagsView.setText(TextUtils.join(", ", post.getTags()));
-        hyperlinkView.setText(post.getHyperlink());
+        //The below code parses and 'trims' the Uri to a shortened, simplified version to display
+        String fullHyperlink = post.getHyperlink();
+        hyperlinkView.setText(Uri.parse(fullHyperlink).getHost());
     }
 }
 

@@ -20,7 +20,7 @@ public class Comment {
         this.commentID = commentID;
     }
 
-    //TODO: Review unused methods after finalisation - remove the unused
+
 
     public String getUsername() {
         return username;

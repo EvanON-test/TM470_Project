@@ -16,6 +16,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 /**
  * Provides the function to sign into the application using their registered email and password, and
  * also navigate to the registration activity if required
@@ -24,9 +26,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private TextInputEditText emailText;
     private TextInputEditText passwordText;
-    private Button loginBtn;
     private Button registerBtn;
+
+    private Button loginBtn;
     private FirebaseAuth fAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -40,6 +44,8 @@ public class LoginActivity extends AppCompatActivity {
         passwordText = findViewById(R.id.log_pass_input);
         loginBtn = findViewById(R.id.log_button);
         registerBtn = findViewById(R.id.reg_on_click);
+
+
 
         //Sets a click listener for the login button, calls the userAccountLogin method when clicked
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -60,19 +66,24 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+
+
+
+
     /**
      * This method logs the user into the application if they have a valid email and password
      * that is stored in the authentication database
+     *
+     * FYI *changed from private to protected for testing*
      */
-    private void userAccountLogin(){
+    protected void userAccountLogin(){
         String email;
         String password;
-        Integer minLength;
 
         //initializes the variables based oin their inputs
-        email = emailText.getText().toString();
-        password = passwordText.getText().toString();
-        minLength = 6;
+        email = Objects.requireNonNull(emailText.getText()).toString();
+        password = Objects.requireNonNull(passwordText.getText()).toString();
+
 
 
 
@@ -82,17 +93,17 @@ public class LoginActivity extends AppCompatActivity {
         if (!UserValidation.isValidEmail(email)){
             Toast.makeText(getApplicationContext(), "Please enter Valid Email", Toast.LENGTH_LONG).show();
             return;
-        } else if (!UserValidation.isValidPassword(password, minLength)){
-            Toast.makeText(getApplicationContext(), "Please enter Valid Password", Toast.LENGTH_LONG).show();
+        } else if (!UserValidation.isValidPassword(password)){
+            Toast.makeText(getApplicationContext(), "Please conform to password requirements", Toast.LENGTH_LONG).show();
             return;
         }
 
-        /**Attempts to sign in to a user account based on the email and password input. If successful
+        /**
+         * Attempts to sign in to a user account based on the email and password input. If successful
          * the main activity launches with a affirmative message. If unsuccessful an informative
          * error message will be displayed.
          *
-         *
-          */
+         * */
         fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -116,5 +127,10 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    //For AndroidTest Testing. However not utilised yet
+    public void setFirebaseAuth(FirebaseAuth mockFirebaseAuth) {
+        this.fAuth = mockFirebaseAuth;
     }
 }

@@ -1,113 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/root_constraint_layout"
+    android:fillViewport="true"
     tools:context=".RegistrationActivity">
 
+    <!--TODO: needs more work on the terms and clickables at the bottom-->
 
-
-
-
-    <TextView
-        android:id="@+id/welcome"
-        android:layout_width="236dp"
-        android:layout_height="45dp"
-        android:text="@string/reg_welcome_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"
-        android:padding="15dp"/>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/reg_user_layout"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcome">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/reg_user_input"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/username"
-            android:inputType="text" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/reg_email_layout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/reg_user_layout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/reg_email_input"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/email_hint"
-            android:inputType="textEmailAddress" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/reg_pass_layout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/reg_email_layout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/reg_pass_input"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/pass_hint"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/reg_pass_confirm_layout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/reg_pass_layout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/reg_pass_confirm_input"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/confirm_pass_hint"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/reg_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:padding="15dp"
-        android:text="@string/register"
-        app:layout_constraintTop_toBottomOf="@+id/reg_pass_confirm_layout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:id="@+id/root_constraint_layout">
 
 
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reg_welcome_text"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="15dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reg_user_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcome">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reg_user_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/username"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/username_requirements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/extended_username_hint"
+            app:layout_constraintTop_toBottomOf="@id/reg_user_layout"
+            app:layout_constraintStart_toStartOf="@id/reg_user_layout"
+            android:padding="15dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reg_email_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/username_requirements">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reg_email_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reg_pass_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reg_email_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reg_pass_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/pass_hint"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/password_requirements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/extended_pass_hint"
+            app:layout_constraintTop_toBottomOf="@id/reg_pass_layout"
+            app:layout_constraintStart_toStartOf="@id/reg_pass_layout"
+            android:padding="15dp"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reg_pass_confirm_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/password_requirements">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reg_pass_confirm_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/confirm_pass_hint"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/legal_disclaimer_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/legal_disclaimer"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/reg_pass_confirm_layout"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <CheckBox
+            android:id="@+id/legal_disclaimer_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/legal_disclaimer_link"
+            app:layout_constraintTop_toTopOf="@+id/legal_disclaimer_link"
+            app:layout_constraintBottom_toBottomOf="@+id/legal_disclaimer_link"
+            android:layout_marginStart="8dp"/>
+
+
+        <TextView
+            android:id="@+id/terms_of_use_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/terms_of_use"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/legal_disclaimer_link"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <CheckBox
+            android:id="@+id/terms_of_use_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/terms_of_use_link"
+            app:layout_constraintTop_toTopOf="@+id/terms_of_use_link"
+            app:layout_constraintBottom_toBottomOf="@+id/terms_of_use_link"
+            android:layout_marginStart="8dp"/>
+
+        <TextView
+            android:id="@+id/gdpr_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gdpr_text"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/terms_of_use_link"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <CheckBox
+            android:id="@+id/gdpr_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/gdpr_link"
+            app:layout_constraintTop_toTopOf="@+id/gdpr_link"
+            app:layout_constraintBottom_toBottomOf="@+id/gdpr_link"
+            android:layout_marginStart="8dp"/>
+
+        <Button
+            android:id="@+id/reg_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:padding="15dp"
+            android:text="@string/register"
+            app:layout_constraintTop_toBottomOf="@+id/gdpr_link"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

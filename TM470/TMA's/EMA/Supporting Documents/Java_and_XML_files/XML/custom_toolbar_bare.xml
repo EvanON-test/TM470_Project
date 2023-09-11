@@ -18,7 +18,8 @@
             android:layout_height="match_parent"
             android:src="@drawable/tm470_app_logo"
             android:scaleType="fitCenter"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:contentDescription="@string/logo_view_description"/>
 
         <Button
             android:id="@+id/create_post_main"

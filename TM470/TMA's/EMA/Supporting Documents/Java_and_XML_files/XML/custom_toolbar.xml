@@ -15,19 +15,22 @@
 
         <ImageView
             android:id="@+id/logo_view"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:contentDescription="@string/logo_view_description"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
             android:src="@drawable/tm470_app_logo"
             android:scaleType="fitCenter"
-            android:layout_weight="1"
+
             />
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/toolbar_searchview"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="3"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            />
 
         <Button
             android:id="@+id/create_post_main"

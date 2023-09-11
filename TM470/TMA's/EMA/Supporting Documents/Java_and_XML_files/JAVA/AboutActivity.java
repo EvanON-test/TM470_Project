@@ -37,7 +37,7 @@ public class AboutActivity extends AppCompatActivity {
 
 
         /**
-         * Sets on click listens for the logo to naviagte to the Mainthreadactivity and the create post button .
+         * Sets on click listens for the logo to navigate to the Mainthreadactivity and the create post button .
          *
          */
 

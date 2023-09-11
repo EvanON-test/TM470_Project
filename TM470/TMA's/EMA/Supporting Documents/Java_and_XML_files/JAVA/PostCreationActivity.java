@@ -9,12 +9,15 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -60,7 +63,7 @@ public class PostCreationActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
-        //Refreshed main thread to show whole list of posts
+        //Refreshes main thread to show whole list of posts
         logoView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,8 +96,7 @@ public class PostCreationActivity extends AppCompatActivity {
      * Creates the options menu in the toolbar which currently allows for the navigation to the profile and about pages as well as
      *  the logout function
      *
-     * @param menu
-     * @return
+     *
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -143,7 +145,7 @@ public class PostCreationActivity extends AppCompatActivity {
         String hyperlink = hyperlinkText.getText().toString();
         String userId = mAuth.getCurrentUser().getUid();
 
-        //TODO: review and increase validation here or in a validation class
+
         /**
          * validates that inputs aren't empty and that url is valid
          */
@@ -151,6 +153,8 @@ public class PostCreationActivity extends AppCompatActivity {
             Toast.makeText(PostCreationActivity.this, "All fields are required. Please review content ", Toast.LENGTH_SHORT).show();
             return;
         }
+
+
 
         if (!isValidUrl(hyperlink)) {
             Toast.makeText(PostCreationActivity.this, "Invalid URL", Toast.LENGTH_SHORT).show();

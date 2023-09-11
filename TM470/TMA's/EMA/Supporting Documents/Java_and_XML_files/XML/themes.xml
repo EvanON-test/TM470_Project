@@ -1,0 +1,45 @@
+<resources >
+    <!-- Base application theme. -->
+    <style name="Theme.TM470TalkingCash" parent="Theme.MaterialComponents.DayNight">
+
+        <!--TODO:Further development needed-->
+
+        <!-- Primary brand color (Using Gold shades) -->
+        <item name="colorPrimary">@color/gold_muted_500</item>
+        <item name="colorPrimaryVariant">@color/gold_muted_600</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/champagne_200</item>
+        <item name="colorSecondaryVariant">@color/taupe_200</item>
+        <item name="colorOnSecondary">@color/gray_700</item>
+
+
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+
+        <!-- Overriding default styles -->
+        <item name="buttonStyle">@style/Widget.TM470TalkingCash.Button</item>
+        <item name="textInputStyle">@style/Widget.TM470TalkingCash.TextInputLayout</item>
+        
+    </style>
+
+    <!-- Button -->
+    <style name="Widget.TM470TalkingCash.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/gold_muted_500</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <!-- TextInputLayout -->
+    <style name="Widget.TM470TalkingCash.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/gold_muted_600</item>
+        <item name="hintTextColor">@color/gray_500</item>
+        <item name="boxBackgroundColor">@color/champagne_200</item>
+    </style>
+
+
+
+
+
+</resources>

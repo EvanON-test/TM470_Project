@@ -69,6 +69,7 @@ public class PostDetailsActivity extends AppCompatActivity {
         ImageView logoView = findViewById(R.id.logo_view);
         Button createPostButton = findViewById(R.id.create_post_main);
 
+        //post ID accessed from the main thread and 'pushed' to here
         postID = getIntent().getStringExtra("POST_ID");
         Log.d("PostDetailsActivity1", "PostID: " + postID.toString());
 
@@ -122,14 +123,17 @@ public class PostDetailsActivity extends AppCompatActivity {
                     //Joins the list of tags from the post inot a string seprated buy a comma ','
                     String tags = TextUtils.join(", ", post.getTags());
                     postTagsTextView.setText(tags);
-                    //Sets teh text of the posthyperlinkbutton to the hyperlink of the post
-                    postHyperlinkButton.setText(post.getHyperlink());
+                    //The below code parses and 'trims' the Uri to a shortened, simplified version to display
+                    String fullHyperlink = post.getHyperlink();
+                    //Sets the text of the posthyperlinkbutton to the hyperlink of the post
+                    postHyperlinkButton.setText(Uri.parse(fullHyperlink).getHost());
+
+
                     Log.d("PostDetailsActivity", "User DocumentSnapshot: " + documentSnapshot.toString());
 
                     //Sets an onclick listener on the posthyperlink button that opens the hyperlink in the devices browser when the button is clicked
                     postHyperlinkButton.setOnClickListener(view -> {
                         String url = post.getHyperlink();
-                        //TODO: Review if this validation is needed as it's already been validatd in creation. Maybe make sure is implemented fully elsewhere and just have a simple check here
                         if (url != null && (url.startsWith("http://")) || (url.startsWith("https://"))) {
                             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(post.getHyperlink()));
                             startActivity(browserIntent);
@@ -153,7 +157,7 @@ public class PostDetailsActivity extends AppCompatActivity {
         // Linear layout means it's scrollable in a linear way
         commentRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //Builds FirestoreRecyclerOptions which includes a query to fetch posts and order them by Timestamp in descending order//TODO: add that only the relevant comment post ID is - i tried .whereEqualTo("postID", postID)
+        //Builds FirestoreRecyclerOptions which includes a query to fetch posts and order them by Timestamp in descending order
         FirestoreRecyclerOptions<Comment> options = new FirestoreRecyclerOptions.Builder<Comment>().setQuery(FirebaseFirestore.getInstance().collection("comments").whereEqualTo("postID", postID).orderBy("timestamp", Query.Direction.DESCENDING), Comment.class).build();
 
         //Creates a FirestoreRecyclerAdapter, it listens to chnages in the firebase databse and updates he view accordingly
@@ -188,8 +192,7 @@ public class PostDetailsActivity extends AppCompatActivity {
      * Creates the options menu in the toolbar which currently allows for the navigation to the profile and about pages as well as
      *  the logout function
      *
-     * @param menu
-     * @return
+     *
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -227,18 +230,12 @@ public class PostDetailsActivity extends AppCompatActivity {
 
 
 
-    /**TODO: possible code could be improved with:
-     *
-     * For convenience, you can also create references by specifying the path to a document or collection as a string, with path components separated by a forward slash (/).
-     * For example, to create a reference to the alovelace document:
-     * DocumentReference alovelaceDocumentRef = db.document("users/alovelace"); But instead of 'lovelace' you use 'Post_ID'??
-     :**/
 
     /**
      *
-     *
      * Creates a post based on the user inputs into title, tag and hyperlink inputs. Some simple validation
      * is implemented.
+     *
      */
     private void createComment() {
         String commentText = userComment.getText().toString();
@@ -267,6 +264,7 @@ public class PostDetailsActivity extends AppCompatActivity {
                         String commentId = db.collection("comments").document().getId();
 
                         Comment userComment = new Comment(username, commentText, new Date().getTime(), postID, commentId);
+
 
                         db.collection("comments").document(commentId).set(userComment)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {

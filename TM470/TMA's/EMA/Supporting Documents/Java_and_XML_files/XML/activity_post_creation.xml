@@ -47,7 +47,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/pc_title"
-            android:inputType="text" />
+            android:inputType="text"
+            android:maxLength="100"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -65,7 +66,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/pc_tag"
-            android:inputType="text" />
+            android:inputType="text"
+            android:maxLength="100"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -83,7 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/pc_link"
-            android:inputType="textUri" /><!--TODO: not too sure about this, see what it does could always change to 'text'-->
+            android:inputType="textUri"
+            android:maxLength="100"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

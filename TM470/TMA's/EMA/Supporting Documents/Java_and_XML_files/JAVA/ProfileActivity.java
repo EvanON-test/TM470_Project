@@ -82,9 +82,19 @@ public class ProfileActivity extends AppCompatActivity {
         editProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showPasswordDialog();
+                String context = "edit";
+                showPasswordDialog(context);
             }
         });
+
+        deleteProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String context = "delete";
+                showPasswordDialog(context);
+            }
+        });
+
 
         /**
          * Fetches information from the users document, specific to users ID, to populate the text views with their details
@@ -100,7 +110,6 @@ public class ProfileActivity extends AppCompatActivity {
                     emailTextView.setText(userProfile.getUserEmail());
 
 
-
                 })
                 //If there is an error getting the document then a error toast is shown and entered into the log
                 .addOnFailureListener(e -> {
@@ -108,52 +117,50 @@ public class ProfileActivity extends AppCompatActivity {
                     Log.w(TAG, "Error getting document", e);
                 });
 
+    }
 
 
+    /**
+     * Deletes document in users collection based on the current userID. If successful will then attempt to delete the user in Authentication database as well,
+     * Will flash up toasts and tags in the response to the outcome
+     */
+        private void deleteUser() {
+            String userID = mAuth.getCurrentUser().getUid();
 
-        /**
-         * Deletes document in users collection bsed on the current userID. If succesful will then attempt to dlete the user in Authentication database aswell,
-         * Will flash up toasts and tags in the epsonse to teh outcome
-         */
-
-        deleteProfileButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                db.collection("users").document(userID).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d(TAG, "Document deleted");
-                        mAuth.getCurrentUser().delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()){
-                                    Log.d(TAG, "User Account Deleted");
-                                    Toast.makeText(getApplicationContext(), "Account deleted", Toast.LENGTH_LONG).show();
-                                    Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
-                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    startActivity(intent);
-                                    finish();
-                                } else {
-                                    Log.w(TAG, "Error deleting user Authentication account", task.getException());
-                                    Toast.makeText(getApplicationContext(), "Error deleting user Authentication account", Toast.LENGTH_LONG).show();
+            db.collection("users").document(userID).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Log.d(TAG, "Document deleted");
+                            mAuth.getCurrentUser().delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()){
+                                        Log.d(TAG, "User Account Deleted");
+                                        Toast.makeText(getApplicationContext(), "Account deleted", Toast.LENGTH_LONG).show();
+                                        Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        startActivity(intent);
+                                        finish();
+                                    } else {
+                                        Log.w(TAG, "Error deleting user Authentication account", task.getException());
+                                        Toast.makeText(getApplicationContext(), "Error deleting user Authentication account", Toast.LENGTH_LONG).show();
+                                    }
                                 }
-                            }
-                        });
+                            });
 
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error deleting document", e);
-                        Toast.makeText(getApplicationContext(), "Error deleting document", Toast.LENGTH_LONG).show();
-                    }
-                });
-            }
-        });
-
-
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w(TAG, "Error deleting document", e);
+                            Toast.makeText(getApplicationContext(), "Error deleting document", Toast.LENGTH_LONG).show();
+                        }
+                    });
         }
+
+
+
 
     /**
      * Creates the options menu in the toolbar which currently allows for the navigation to the profile and about pages as well as
@@ -203,7 +210,7 @@ public class ProfileActivity extends AppCompatActivity {
     /**
      * Creates a password check before navigation to profile edit activity
      */
-    private void showPasswordDialog(){
+    private void showPasswordDialog(String context){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Enter Password");
 
@@ -217,7 +224,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 String enteredPassword = input.getText().toString();
-                checkPasswordAndRedirect(enteredPassword);
+                checkPasswordAndRedirect(enteredPassword, context);
             }
         });
 
@@ -232,15 +239,32 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
 
-    //Gets curent users email and actions a another sign in event
-    private void checkPasswordAndRedirect(String enteredPassword){
+    //Gets current users email and actions a another sign in event. Based on context will either navigate to profile edit or delete user
+    private void checkPasswordAndRedirect(String enteredPassword, String context){
         String emailCheck = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(emailCheck, enteredPassword).addOnCompleteListener(task -> {
-            if (task.isSuccessful()){
-                Intent intent = new Intent(ProfileActivity.this, ProfileEditActivity.class);
-                startActivity(intent);
-            }
-        });
+
+        switch (context){
+            case "edit":
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(emailCheck, enteredPassword).addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Intent intent = new Intent(ProfileActivity.this, ProfileEditActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                break;
+            case "delete":
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(emailCheck, enteredPassword).addOnCompleteListener(task -> {
+                    if (task.isSuccessful()){
+                        deleteUser();
+                    }
+                });
+                break;
+
+            default:
+                Toast.makeText(this, "Can't find context", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
     }
 
 }
